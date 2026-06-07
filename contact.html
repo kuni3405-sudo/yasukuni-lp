@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ | yasukuni AI副業</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Shippori+Mincho:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="legal.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="index.html" class="brand">
+        <span class="mark">Y</span>
+        <span class="brand-txt">yasukuni<span>AI SIDE-BUSINESS</span></span>
+      </a>
+      <a href="index.html" class="back-link">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        トップへ戻る
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="eyebrow">Contact</div>
+      <h1 class="page-title">お問い合わせ</h1>
+      <p class="page-intro">サービスや特典に関するご質問・ご相談はこちらから。LINEからのご連絡が最もスムーズです。内容を確認のうえ、順次ご返信します。</p>
+
+      <div class="contact-grid">
+        <a href="https://lin.ee/x0MJVcC" class="contact-card line">
+          <div class="c-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 5.7 2 10.3c0 2.9 1.9 5.5 4.8 7-.2.7-.7 2.5-.8 2.9 0 0-.1.4.2.5.2.1.4 0 .4 0 .5-.1 3.2-2.1 4.4-3 .3 0 .7.1 1 .1 5.5 0 10-3.7 10-8.3S17.5 2 12 2z"/></svg></div>
+          <div class="c-label">LINE（おすすめ）</div>
+          <div class="c-value">LINEで相談する</div>
+          <div class="c-sub">登録後、トーク画面からそのままメッセージを送れます。</div>
+        </a>
+        <a href="mailto:kuni3405@gmail.com" class="contact-card">
+          <div class="c-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="c-label">Email</div>
+          <div class="c-value">kuni3405@gmail.com</div>
+          <div class="c-sub">メールでのお問い合わせはこちら。返信まで数日いただく場合があります。</div>
+        </a>
+      </div>
+
+      <div class="form-shell">
+        <h2>メッセージを送る</h2>
+        <p class="fdesc">下記フォームに入力して送信すると、メールソフトが立ち上がります。内容を確認のうえ、そのまま送信してください。</p>
+        <form id="contactForm">
+          <div class="field">
+            <label for="name">お名前<span class="req">*</span></label>
+            <input type="text" id="name" name="name" placeholder="山田 太郎" required>
+          </div>
+          <div class="field">
+            <label for="email">メールアドレス<span class="req">*</span></label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="field">
+            <label for="subject">件名</label>
+            <input type="text" id="subject" name="subject" placeholder="特典について / その他のご相談">
+          </div>
+          <div class="field">
+            <label for="message">お問い合わせ内容<span class="req">*</span></label>
+            <textarea id="message" name="message" placeholder="ご質問・ご相談の内容をご記入ください。" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">この内容で送信する</button>
+        </form>
+      </div>
+
+      <p class="updated">※ いただいた個人情報は<a href="privacy.html" style="color:var(--gold-soft);border-bottom:1px solid var(--line);text-decoration:none;">プライバシーポリシー</a>に基づき適切に取り扱います。</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="tokusho.html">特定商取引法に基づく表記</a>
+        <a href="privacy.html">プライバシーポリシー</a>
+        <a href="contact.html" class="current">お問い合わせ</a>
+      </div>
+      <p>© 2026 Kuniyasu AI Side-Business. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var name = document.getElementById('name').value.trim();
+      var email = document.getElementById('email').value.trim();
+      var subject = document.getElementById('subject').value.trim() || 'お問い合わせ';
+      var message = document.getElementById('message').value.trim();
+      var body =
+        'お名前: ' + name + '\n' +
+        'メール: ' + email + '\n' +
+        '------------------------------\n' +
+        message + '\n';
+      var mailto = 'mailto:kuni3405@gmail.com'
+        + '?subject=' + encodeURIComponent('【お問い合わせ】' + subject)
+        + '&body=' + encodeURIComponent(body);
+      window.location.href = mailto;
+    });
+  </script>
+</body>
+</html>
